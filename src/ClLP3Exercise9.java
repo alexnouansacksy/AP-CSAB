@@ -1,5 +1,5 @@
 // Alex Nouansacksy
-// CL 3-9 w/classes (class file)
+// Class file for LP3-9 w/classes
 // 09/05/2023
 public class ClLP3Exercise9 {
     private int myBirthYear;
