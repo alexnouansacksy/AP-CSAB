@@ -43,7 +43,7 @@ public class Prog506t {
             }
             player mostHits = list.get(0);
             for (int i = 0; i <list.size(); i++) {
-                if (list.get(i). )
+                if (list.get(i))
             }
 
 
