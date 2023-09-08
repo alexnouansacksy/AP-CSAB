@@ -11,7 +11,7 @@ public class Prog506t {
     public static void main(String[] args) {
         try {
             Scanner keyboard = new Scanner(new File("data/prog506t.txt"));
-            ArrayList<Cl506t> list = new ArrayList<Cl506t>();
+            ArrayList<player> list = new ArrayList<player>();
 
             while (keyboard.hasNext()){
                 String first = keyboard.next();
