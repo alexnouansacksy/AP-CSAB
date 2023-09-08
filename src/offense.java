@@ -31,5 +31,18 @@ public class offense {
         myslug = (my1b + (my2b * 2) + (my3b * 3) + (myhr * 4)) / (double) myab;
         myonbaseperc = (myhits + mybb + myhp) / (double) (myab + mybb + myhp + mysac);
     }
+    public int getAb() {return myab;}
+    public int getBb() {return mybb;}
+    public int getHp() {return myhp;}
+    public int getSac() {return mysac;}
+    public int getHits() {return myhits;}
+    public int getb1() {return my1b;}
+    public int getb2() {return my2b;}
+    public int getb3() {return my3b;}
+    public int getHr() {return myhr;}
+
+    public double getAvg() {return myavg;}
+    public double getSlug() {return myslug;}
+    public double getOnBasePerc() {return myonbaseperc;}
 
 }
