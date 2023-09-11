@@ -41,10 +41,47 @@ public class Prog506t {
 
                 list.add(wow);
             }
+
             player mostHits = list.get(0);
-            for (int i = 0; i <list.size(); i++) {
-                if (list.get(i))
+            for (player player : list) if (player.getHits() > mostHits.getHits()) mostHits = player;
+
+            out.print(mostHits.getName() + " has the most hits with " + mostHits.getHits() + " hits.");
+
+            player highestBatting = list.get(0);
+            for (player player : list) if (player.getbattingavg() > highestBatting.getbattingavg()) highestBatting = player;
+
+            player secondHighBatting;
+            if (highestBatting == list.get(0))  secondHighBatting = list.get(1);
+            else  secondHighBatting = list.get(0);
+
+            for (player player : list) if ((player.getbattingavg() > secondHighBatting.getbattingavg()) && player != highestBatting
+            ) secondHighBatting = player;
+
+            out.printf("\nThe players %s and %s have the highest battle averages, with %f and %f", highestBatting.getName(),
+                    secondHighBatting.getName(), highestBatting.getbattingavg(), secondHighBatting.getbattingavg());
+
+            player worstFielding = list.get(0);
+            for (player player : list) {
+                if (player.getFielding() > worstFielding.getFielding()) worstFielding = player;
             }
+
+            player secondWorstFielding;
+            if (worstFielding == list.get(0))  secondWorstFielding = list.get(1);
+            else  secondWorstFielding = list.get(0);
+
+            for (player player : list) if ((player.getFielding() > secondWorstFielding.getbattingavg())
+                    && player != worstFielding) secondHighBatting = player;
+
+            out.printf("\nThe players %s and %s have the worst fielding averages, with %.2f and %.2f", worstFielding.getName(),
+                    secondWorstFielding.getName(), secondWorstFielding.getFielding(), secondWorstFielding.getFielding());
+
+            out.println();
+            out.println(worstFielding.getPutouts());
+            out.println(worstFielding.getAssists());
+            out.println(worstFielding.getErrors());
+
+
+
 
 
         } catch (IOException e) {
@@ -52,10 +89,4 @@ public class Prog506t {
         }
     }
 }
-/*
-out.printf("%s %d %d %d %d %d %d %d %d %d %d %d %d", wow.getName(), offenseStats.getAb(),
-                        offenseStats.getBb(), offenseStats.getHp(), offenseStats.getSac(), offenseStats.getHits(),
-                        offenseStats.getb1(), offenseStats.getb2(), offenseStats.getb3(), offenseStats.getHr(),
-                        defenseStats.getAssists(), defenseStats.getPutouts(), defenseStats.getErrors());
-                out.println();
- */
+
