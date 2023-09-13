@@ -30,20 +30,24 @@ public class comlist {
         while ((myroot != null) && myroot.getCom() == 0) myroot = myroot.next;
         if (myroot == null) return;
     }
-    node prev = myroot;
-    node temp = myroot.next;
 
-    while (temp != null) {
-        if (temp.getCom() == 0) {
-            prev.next = temp.next;
-            temp = temp.next;
-        }
-        else {
-            prev = temp;
-            temp = temp.next;
-        }
+    public void something() {
+        node prev = myroot;
+        node temp = myroot.next;
+        while (temp != null) {
+            if (temp.getCom() == 0) {
+                prev.next = temp.next;
+                temp = temp.next;
+            }
+            else {
+                prev = temp;
+                temp = temp.next;
+            }
 
+        }
     }
+
+
 
 
 }
