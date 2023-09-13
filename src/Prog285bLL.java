@@ -20,7 +20,6 @@ public class Prog285bLL {
                 wow.addfirst(pill);
             }
 
-            wow.calc;
         } catch (IOException e) {
             out.println("Can't find data file!");
         }
