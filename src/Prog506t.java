@@ -4,6 +4,7 @@
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.*;
 import static java.lang.System.out;
 
@@ -38,6 +39,7 @@ public class Prog506t {
 
                 defense defenseStats = new defense (assists, putouts, errors);
                 player wow = new player(name, offenseStats, defenseStats);
+                defenseStats.calculate();
 
                 list.add(wow);
             }
@@ -62,27 +64,43 @@ public class Prog506t {
 
             player worstFielding = list.get(0);
             for (player player : list) {
-                if (player.getFielding() > worstFielding.getFielding()) worstFielding = player;
+                if (player.getFielding() < worstFielding.getFielding()) worstFielding = player;
             }
 
             player secondWorstFielding;
             if (worstFielding == list.get(0))  secondWorstFielding = list.get(1);
             else  secondWorstFielding = list.get(0);
 
-            for (player player : list) if ((player.getFielding() > secondWorstFielding.getbattingavg())
-                    && player != worstFielding) secondHighBatting = player;
+            for (player player : list) if ((player.getFielding() < secondWorstFielding.getFielding())
+                    && player != worstFielding) secondWorstFielding = player;
 
             out.printf("\nThe players %s and %s have the worst fielding averages, with %.2f and %.2f", worstFielding.getName(),
-                    secondWorstFielding.getName(), secondWorstFielding.getFielding(), secondWorstFielding.getFielding());
+                    secondWorstFielding.getName(), worstFielding.getFielding(), secondWorstFielding.getFielding());
 
-            out.println();
-            out.println(worstFielding.getPutouts());
-            out.println(worstFielding.getAssists());
-            out.println(worstFielding.getErrors());
+            ArrayList<player> averages = new ArrayList<>();
 
+            player lowestBasePercentage = list.get(0);
+            for (player player: list) if (player.getonbasepercentage() < lowestBasePercentage.getonbasepercentage())
+                lowestBasePercentage = player;
 
+            for (int i = 0; i < list.size()-1; i++) {
+                Boolean added = false;
+                for (int j = 1; j < averages.size() - 1; j++) {
+                    if (list.get(j).getonbasepercentage() > list.get(j - 1).getonbasepercentage()) {
+                        if (averages.size() == 1) averages.add(list.get(j));
+                        else {
+                            if (list.get(j).getonbasepercentage() < list.get(j+1).getonbasepercentage()){
+                                averages.add(list.get(j));
+                            }
+                        }
+                    }
+                }
+            }
 
-
+            for (player player : averages) out.printf("\n%s %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f", player.getName(), player.getAtBats(),
+                    player.getWalks(), player.getHitByPitches(), player.getSacrifices(), player.getHits(),
+                    player.getSingles(), player.getDoubles(), player.getTriples(), player.getHomeRuns(),
+                    player.getAssists(), player.getPutouts(), player.getErrors());
 
         } catch (IOException e) {
             out.println("Can't find data file!");

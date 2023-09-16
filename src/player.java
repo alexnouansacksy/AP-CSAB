@@ -31,15 +31,7 @@ public class player
     public double getAssists() {return mydef.getAssists();}
     public double getPutouts() {return mydef.getPutouts();}
     public double getErrors() {return mydef.getErrors();}
-    public void calculate() {
-        myoff.calculate();
-        mydef.calculate();
-    }
 }
 /*
-out.printf("%s %d %d %d %d %d %d %d %d %d %d %d %d", wow.getName(), offenseStats.getAb(),
-                        offenseStats.getBb(), offenseStats.getHp(), offenseStats.getSac(), offenseStats.getHits(),
-                        offenseStats.getb1(), offenseStats.getb2(), offenseStats.getb3(), offenseStats.getHr(),
-                        defenseStats.getAssists(), defenseStats.getPutouts(), defenseStats.getErrors());
-                out.println();
+
  */

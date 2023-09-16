@@ -29,9 +29,6 @@ public class comlist {
     public void delete () {
         while ((myroot != null) && myroot.getCom() == 0) myroot = myroot.next;
         if (myroot == null) return;
-    }
-
-    public void something() {
         node prev = myroot;
         node temp = myroot.next;
         while (temp != null) {
@@ -46,8 +43,4 @@ public class comlist {
 
         }
     }
-
-
-
-
 }
