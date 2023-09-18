@@ -43,68 +43,72 @@ public class Prog506t {
 
                 list.add(wow);
             }
-
+            // 	A: The player with the most hits.
             player mostHits = list.get(0);
             for (player player : list) if (player.getHits() > mostHits.getHits()) mostHits = player;
+            out.print("A. " + mostHits.getName() + " has the most hits with " + mostHits.getHits() + " hits.");
 
-            out.print(mostHits.getName() + " has the most hits with " + mostHits.getHits() + " hits.");
+            // B: The two players with the highest batting average.
 
             player highestBatting = list.get(0);
-            for (player player : list) if (player.getbattingavg() > highestBatting.getbattingavg()) highestBatting = player;
+            player secondHighBatting = list.get(0);
 
-            player secondHighBatting;
-            if (highestBatting == list.get(0))  secondHighBatting = list.get(1);
-            else  secondHighBatting = list.get(0);
+            for (player player : list) {
+                if(player.getbattingavg() > highestBatting.getbattingavg()){
+                    secondHighBatting = highestBatting;
+                    highestBatting = player;
+                }
+                else if (player.getbattingavg() > secondHighBatting.getbattingavg()) secondHighBatting = player;
+            }
 
-            for (player player : list) if ((player.getbattingavg() > secondHighBatting.getbattingavg()) && player != highestBatting
-            ) secondHighBatting = player;
-
-            out.printf("\nThe players %s and %s have the highest battle averages, with %f and %f", highestBatting.getName(),
+            out.printf("\nB. The players %s and %s have the highest battle averages, with %.3f and %.3f", highestBatting.getName(),
                     secondHighBatting.getName(), highestBatting.getbattingavg(), secondHighBatting.getbattingavg());
 
+            // C: The two players with the worst fielding percentage.
             player worstFielding = list.get(0);
+            player secondWorstFielding = list.get(0);
+
             for (player player : list) {
-                if (player.getFielding() < worstFielding.getFielding()) worstFielding = player;
+                if(player.getFielding() < worstFielding.getFielding()) {
+                    secondWorstFielding = worstFielding;
+                    worstFielding = player;
+                }
+                else if (player.getFielding() < secondWorstFielding.getFielding()) secondWorstFielding = player;
             }
 
-            player secondWorstFielding;
-            if (worstFielding == list.get(0))  secondWorstFielding = list.get(1);
-            else  secondWorstFielding = list.get(0);
-
-            for (player player : list) if ((player.getFielding() < secondWorstFielding.getFielding())
-                    && player != worstFielding) secondWorstFielding = player;
-
-            out.printf("\nThe players %s and %s have the worst fielding averages, with %.2f and %.2f", worstFielding.getName(),
+            out.printf("\nC. The players %s and %s have the worst fielding averages, with %.2f and %.2f", worstFielding.getName(),
                     secondWorstFielding.getName(), worstFielding.getFielding(), secondWorstFielding.getFielding());
 
-            ArrayList<player> averages = new ArrayList<>();
-
-            player lowestBasePercentage = list.get(0);
-            for (player player: list) if (player.getonbasepercentage() < lowestBasePercentage.getonbasepercentage())
-                lowestBasePercentage = player;
-
-            for (int i = 0; i < list.size()-1; i++) {
-                Boolean added = false;
-                for (int j = 1; j < averages.size() - 1; j++) {
-                    if (list.get(j).getonbasepercentage() > list.get(j - 1).getonbasepercentage()) {
-                        if (averages.size() == 1) averages.add(list.get(j));
-                        else {
-                            if (list.get(j).getonbasepercentage() < list.get(j+1).getonbasepercentage()){
-                                averages.add(list.get(j));
-                            }
-                        }
+            // 	D: The team sorted in on base percentage order.
+            ArrayList<player> sorted = new ArrayList<>();
+            ArrayList<player> temp = new ArrayList<>();
+            temp = list;
+            while (!temp.isEmpty()) {
+                player lowest = temp.get(0);
+                int loc = 0;
+                for (int i = 0; i < temp.size(); i++) {
+                    if (temp.get(i).getonbasepercentage() < lowest.getonbasepercentage()) {
+                        lowest = temp.get(i);
+                        loc = i;
                     }
                 }
+                sorted.add(temp.get(loc));
+                temp.remove(loc);
             }
+            out.print("\nD. Players sorted in on base percentage order.");
+            for (player player : sorted) out.printf("\n%s with %.2f", player.getName(), player.getonbasepercentage());
 
-            for (player player : averages) out.printf("\n%s %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f", player.getName(), player.getAtBats(),
-                    player.getWalks(), player.getHitByPitches(), player.getSacrifices(), player.getHits(),
-                    player.getSingles(), player.getDoubles(), player.getTriples(), player.getHomeRuns(),
-                    player.getAssists(), player.getPutouts(), player.getErrors());
-
+            // 	E: The teams slugging percentage.
+            int totalAtBats;
+            int totalBases;
         } catch (IOException e) {
             out.println("Can't find data file!");
         }
     }
 }
-
+/*
+for (player player : list) out.printf("\n%s %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f %.1f", player.getName(), player.getAtBats(),
+                    player.getWalks(), player.getHitByPitches(), player.getSacrifices(), player.getHits(),
+                    player.getSingles(), player.getDoubles(), player.getTriples(), player.getHomeRuns(),
+                    player.getAssists(), player.getPutouts(), player.getErrors());
+ */
