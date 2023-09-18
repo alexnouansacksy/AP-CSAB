@@ -1,3 +1,5 @@
+package Prog285bLinkedList;
+
 public class node {
     private int myid;
     private int mycode;
@@ -28,5 +30,9 @@ public class node {
             if (mysales <= 3500) mycom = 0.095 * mysales;
             else mycom = .095 * 3500 + (mysales - 3500) * .12;
         }
+    }
+
+    public String toString() {
+        return myid + " " + mycode + " " + mysales + " " + mycom;
     }
 }

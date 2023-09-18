@@ -1,6 +1,8 @@
-// Alex Nouansacksy
+package Prog285bLinkedList;// Alex Nouansacksy
 // Prog285b Linked Lists
 // 9/13/2023
+import Prog285bLinkedList.comlist;
+
 import java.util.*;
 import java.io.*;
 
@@ -17,8 +19,17 @@ public class Prog285bLL {
                 double s = keyboard.nextDouble();
 
                 node pill = new node(id, c, s);
-                wow.addfirst(pill);
+                wow.addlast(pill);
             }
+
+            wow.calc();
+            wow.print();
+
+            out.println();
+
+            wow.delete();
+            wow.print();
+
 
         } catch (IOException e) {
             out.println("Can't find data file!");
