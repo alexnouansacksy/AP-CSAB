@@ -46,7 +46,7 @@ public class Prog506t {
 
                 list.add(wow);
             }
-            // 	A: The Prog506t.player with the most hits.
+            // 	A: The player with the most hits.
             player mostHits = list.get(0);
             for (player player : list) if (player.getHits() > mostHits.getHits()) mostHits = player;
             out.print("A. " + mostHits.getName() + " has the most hits with " + mostHits.getHits() + " hits.");
