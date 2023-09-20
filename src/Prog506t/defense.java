@@ -1,3 +1,5 @@
+package Prog506t;
+
 public class defense {
     private int myassists;
     private int myputouts;

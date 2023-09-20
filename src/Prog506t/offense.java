@@ -1,3 +1,5 @@
+package Prog506t;
+
 public class offense {
     private int myab;
     private int mybb;

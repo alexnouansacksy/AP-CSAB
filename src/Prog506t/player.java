@@ -1,3 +1,5 @@
+package Prog506t;
+
 public class player
 {
     private String myname;
