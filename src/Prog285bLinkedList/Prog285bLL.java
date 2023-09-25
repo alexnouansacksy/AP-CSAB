@@ -1,7 +1,9 @@
-package Prog285bLinkedList;// Alex Nouansacksy
+// Alex Nouansacksy
 // Prog285b Linked Lists
 // 9/13/2023
-import Prog285bLinkedList.comlist;
+
+package Prog285bLinkedList;
+
 
 import java.util.*;
 import java.io.*;
