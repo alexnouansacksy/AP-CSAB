@@ -73,9 +73,26 @@ public class BigLinkedList {
         wow.removeSpot(loc);
         out.print("Get rid of a node at a certain spot: ");
         wow.printList();
+        // Clear the entire list
+        wow.clear();
+        out.print("Clear the entire list: ");
+        wow.printList();
+        // Make new list
+        for (int i = 0; i < 200; i++) {
+            randomNum = new node (rand.nextInt(200 + 1));
+            wow.addlast(randomNum);
+        }
+        out.print("New list: ");
+        wow.printList();
+        // Check to see if list contains number
+        out.print("Enter number to find: ");
+        spot = keyboard.nextInt();
+        wow.checkForNum(spot);
         // Create a reverse copy of the list
-        out.print("Create a reverse copy of the list: ");
-        wow.printReverseSetup();
+        out.print("\nCreate a reverse copy of the list: ");
+        comlist test = wow.getReverse();
+        test.printList();
+
 
     }
 }

@@ -42,7 +42,6 @@ public class comlist {
         while (temp.next != null) temp = temp.next;
         temp.next = stuff;
     }
-
     // Print the number of nodes
     public int getCount() {
         int cnt = 0;
@@ -54,7 +53,6 @@ public class comlist {
         }
         return cnt;
     }
-
     //Insert a  node into a certain spot if possible
     public void addNum(node num, int spot) {
         if (myroot == null) {
@@ -75,12 +73,10 @@ public class comlist {
         temp.next = newNode;
 
     }
-
     // Check to see if list is empty
     public boolean isEmpty() {
         return myroot == null;
     }
-
     // Check to see if a number exists
     public boolean isThere(int n) {
         if (myroot == null) return false;
@@ -91,7 +87,6 @@ public class comlist {
         }
         return false;
     }
-
     // Get first number
     public int getfirst() {
         if (myroot == null) {
@@ -100,7 +95,6 @@ public class comlist {
         }
         else return myroot.getval();
     }
-
     // Get last public
     public int getLast() {
         if (myroot == null) {
@@ -110,7 +104,6 @@ public class comlist {
         while (temp.next != null) temp = temp.next;
         return temp.getval();
     }
-
     // Get a number at a certain spot;
     public int getSpot (int spot) {
         node temp = myroot;
@@ -179,7 +172,46 @@ public class comlist {
         }
     }
 
-    // Print in reverse order
+    // Clear the entire list
+    public void clear() {
+        myroot = null;
+    }
+    // check for num
+    public boolean checkForNum(int n) {
+        node temp = myroot;
+        if (temp == null) {
+            out.println("The list is empty.");
+            return false;
+        }
+        while (temp.next != null) {
+            if (temp.getval() == n) {
+                out.print("The number " + n + " is in the list.");
+                return true;
+            }
+            temp = temp.next;
+        }
+        out.println("The number " + n + " is in the list.");
+        return false;
+    }
+
+    public comlist getReverse() {
+        node temp = myroot;
+        comlist reverse = new comlist();
+        while (temp != null) {
+            node add = new node(temp.getval());
+            reverse.addfront(add);
+            temp = temp.next;
+        }
+        return reverse;
+    }
+
+
+
+}
+
+
+/*
+// Print in reverse order
     public void printReverseSetup() {
         node temp = myroot;
         printReverse(temp);
@@ -189,8 +221,4 @@ public class comlist {
         printReverse(temp.next);
         out.print(temp.getval() + " ");
     }
-
-
-}
-
-
+ */
