@@ -88,12 +88,49 @@ public class BigLinkedList {
         out.print("Enter number to find: ");
         spot = keyboard.nextInt();
         wow.checkForNum(spot);
+        // Get the number at a certain position
+        out.print("\nEnter index of number: ");
+        loc = keyboard.nextInt();
+        certainNum = wow.getNum(loc);
+        out.println("Get the number at a certain position: " + certainNum);
         // Create a reverse copy of the list
-        out.print("\nCreate a reverse copy of the list: ");
+        out.print("Create a reverse copy of the list: ");
         comlist test = wow.getReverse();
         test.printList();
+        // Create an iterator over the numbers
+        Iterator<Integer> iteration = wow.makeInterator();
+        out.print("Create an iterator over the numbers: ");
+        while (iteration.hasNext()) out.print(iteration.next() + " ");
+        // Average the set of numbers
+        double avg = wow.avg();
+        out.println("\nAverage the set of numbers: " + avg);
+        // Find the min of the numbers
+        int min = wow.min();
+        out.println("The min is: " + min);
+        // Find the max of the numbers
+        int max = wow.max();
+        out.println("The max is: " + max);
+        // Find the slot number of the largest num
+        int firstOccurrence = wow.findSlotMaxFirst();
+        out.println("The first occurrence of the largest num is: " + firstOccurrence);
+        // Find the slot number of the largest num
+        int lastOccurrence = wow.getCount() - 1 - wow.findSlotMaxLast();
+        out.println("The last occurrence of the largest num is: " + lastOccurrence);
 
 
     }
 }
+
+/*
+// Print in reverse order
+    public void printReverseSetup() {
+        node temp = myroot;
+        printReverse(temp);
+    }
+    public void printReverse(node temp) {
+        if (temp == null) return;
+        printReverse(temp.next);
+        out.print(temp.getval() + " ");
+    }
+ */
 

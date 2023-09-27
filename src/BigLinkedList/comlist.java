@@ -1,6 +1,13 @@
+// Alex Nouansacksy
+// Big Linked List
+// 9/20/2023
+
 package BigLinkedList;
 
 import static java.lang.System.out;
+import java.util.*;
+import java.util.Iterator;
+
 
 public class comlist {
     private node myroot;
@@ -171,7 +178,6 @@ public class comlist {
             else temp = temp.next;
         }
     }
-
     // Clear the entire list
     public void clear() {
         myroot = null;
@@ -190,10 +196,18 @@ public class comlist {
             }
             temp = temp.next;
         }
-        out.println("The number " + n + " is in the list.");
+        out.print("The number " + n + " is not in the list.");
         return false;
     }
-
+    // Get the number at a certain position
+    public int getNum(int pos) {
+        node temp = myroot;
+        if (temp == null) return -1;
+        if (pos > getCount()) return -1;
+        for (int i = 0; i < pos; i++) temp = temp.next;
+        return myroot.getval();
+    }
+    // Create a reverse copy of the list
     public comlist getReverse() {
         node temp = myroot;
         comlist reverse = new comlist();
@@ -204,21 +218,81 @@ public class comlist {
         }
         return reverse;
     }
+    // Create an iterator over the numbers
+    public Iterator<Integer> makeInterator() {
+        if (myroot == null) return null;
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        node temp = myroot;
+        while (temp.next != null) {
+            nums.add(temp.getval());
+            temp = temp.next;
+        }
+        return nums.iterator();
+    }
+    // Average the set of numbers
+    public double avg() {
+        if (myroot == null) return 0;
+        node temp = myroot;
+        double avg = 0;
+        while (temp.next != null) {
+            avg += temp.getval();
+            temp = temp.next;
+        }
+        avg /= getCount();
+        return avg;
+    }
+    // Find the min of the numbers;
+    public int min() {
+        if (myroot == null) return 0;
+        node temp = myroot;
+        int min = myroot.getval();
+        while (temp.next != null) {
+            if (temp.getval() < min) min = temp.getval();
+            temp = temp.next;
+        }
+        return min;
+    }
+    // Find the max of the numbers;
+    public int max() {
+        if (myroot == null) return 0;
+        node temp = myroot;
+        int max = temp.getval();
+        while (temp.next != null) {
+            if (temp.getval()  > max) max = temp.getval();
+            temp = temp.next;
+        }
+        return max;
+    }
+    // Find the slot number of the biggest first occurrence
+    public int findSlotMaxFirst() {
+        if (myroot == null) return -1;
+        node temp = myroot;
+        int cnt = 0;
+        while (temp.next != null) {
+            if (temp.getval() == max()) return cnt;
+            temp = temp.next;
+            cnt++;
+        }
+        return cnt;
+    }
+    // Find the slot number of the biggest last occurrence
+    public int findSlotMaxLast() {
+        comlist reverse = getReverse();
+        return reverse.findSlotMaxFirst();
+    }
+
+    // Sort all the numbers
+    public void sort() {
+        node temp = myroot;
+        int test = 0;
+        while (temp.next != null) {
+
+        }
+    }
 
 
 
 }
 
 
-/*
-// Print in reverse order
-    public void printReverseSetup() {
-        node temp = myroot;
-        printReverse(temp);
-    }
-    public void printReverse(node temp) {
-        if (temp == null) return;
-        printReverse(temp.next);
-        out.print(temp.getval() + " ");
-    }
- */
+
