@@ -116,9 +116,21 @@ public class BigLinkedList {
         // Find the slot number of the largest num
         int lastOccurrence = wow.getCount() - 1 - wow.findSlotMaxLast();
         out.println("The last occurrence of the largest num is: " + lastOccurrence);
+        // Sort all the numbers;
+        out.print("Sort all the numbers: ");
         wow.sort();
         wow.printList();
-
+        // Get rid of all the 58's, return how many
+        int removed = wow.lose58();
+        out.println("Removed " + removed + " 58's from the list.");
+        wow.printList();
+        // Find the number of even numbers
+        int evens = wow.getEvenCount();
+        out.println("There are " + evens + " even numbers in the list.");
+        // Delete the odd numbers
+        wow.killOdds();
+        out.print("Deleted all the odd nums: ");
+        wow.printList();
     }
 }
 

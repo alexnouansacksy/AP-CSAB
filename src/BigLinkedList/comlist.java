@@ -284,15 +284,67 @@ public class comlist {
 
     // Sort all the numbers
     public void sort() {
-        comlist sorted = new comlist();
         node temp = myroot;
-        while (temp.next.getval() != min()) {
-            temp = temp.next;
-        }
+        node start = myroot;
+        while (start.next != null) {
+            node pointer = start;
+            int max = -1;
+            while (pointer.next != null) {
+                if (pointer.getval()  > max) max = pointer.getval();
+                pointer = pointer.next;
+            }
+            while (temp.next.getval() != max) temp = temp.next;
+            int temporary = temp.next.getval();
+            temp.next = temp.next.next;
+            addfront(new node(temporary));
+            temp = start;
 
+            start = start.next;
+
+
+        }
     }
 
+    // Get rid of all the 58s
+    public int lose58() {
+        node temp = myroot;
+        int cnt = 0;
+        while (temp.next != null) {
+            if (myroot.getval() == 58) removeFirst();
 
+            if (temp.next.getval() == 58) {
+                temp.next = temp.next.next;
+                cnt ++;
+            }
+            temp = temp.next;
+        }
+        return cnt;
+    }
+
+    // Find the number of even numbers
+    public int getEvenCount() {
+        node temp = myroot;
+        int cnt = 0;
+        if (temp == null) return 0;
+        while (temp.next != null) {
+            if (temp.getval() % 2 == 0) cnt++;
+            temp = temp.next;
+        }
+        return cnt;
+    }
+
+    // Delete all the odd numbers
+    public void killOdds() {
+        node temp = myroot;
+        while (temp.next.next != null) {
+            if (temp.next.getval() % 2 != 0) {
+                temp.next = temp.next.next;
+            } else {
+                if (temp.next.next != null) temp = temp.next;
+            }
+        }
+        if (temp.next.getval() %2 == 1) removeLast();
+    }
 
 }
 
