@@ -284,23 +284,12 @@ public class comlist {
 
     // Sort all the numbers
     public void sort() {
+        comlist sorted = new comlist();
         node temp = myroot;
-        node newFront = new node(min());
-
-        for (int i = 0; i < getCount(); i++) {
-            int min = min();
-            node temporary = new node(min);
-            for (int j = i; i < getCount(); i++) {
-                if (temp.next.getval() == min) {
-                    temp.next = temp.next.next;
-                }
-            }
-            temp.next = temporary;
-            temp.next.next = temp;
+        while (temp.next.getval() != min()) {
             temp = temp.next;
         }
 
-        temp = newFront;
     }
 
 
