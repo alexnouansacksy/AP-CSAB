@@ -285,17 +285,22 @@ public class comlist {
     // Sort all the numbers
     public void sort() {
         node temp = myroot;
-        int loc = 0;
+        node newFront = new node(min());
 
-        while (temp.next != null) {
-            int test = min();
-            if(temp.next.getval() == test) {
-                temp.next = temp.next.next;
+        for (int i = 0; i < getCount(); i++) {
+            int min = min();
+            node temporary = new node(min);
+            for (int j = i; i < getCount(); i++) {
+                if (temp.next.getval() == min) {
+                    temp.next = temp.next.next;
+                }
             }
+            temp.next = temporary;
+            temp.next.next = temp;
             temp = temp.next;
-
         }
 
+        temp = newFront;
     }
 
 
