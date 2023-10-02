@@ -116,7 +116,8 @@ public class BigLinkedList {
         // Find the slot number of the largest num
         int lastOccurrence = wow.getCount() - 1 - wow.findSlotMaxLast();
         out.println("The last occurrence of the largest num is: " + lastOccurrence);
-
+        wow.sort();
+        wow.printList();
 
     }
 }

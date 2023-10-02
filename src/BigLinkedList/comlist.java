@@ -227,6 +227,7 @@ public class comlist {
             nums.add(temp.getval());
             temp = temp.next;
         }
+        nums.add(temp.getval());
         return nums.iterator();
     }
     // Average the set of numbers
@@ -284,10 +285,17 @@ public class comlist {
     // Sort all the numbers
     public void sort() {
         node temp = myroot;
-        int test = 0;
+        int loc = 0;
+
         while (temp.next != null) {
+            int test = min();
+            if(temp.next.getval() == test) {
+                temp.next = temp.next.next;
+            }
+            temp = temp.next;
 
         }
+
     }
 
 
