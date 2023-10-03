@@ -117,7 +117,7 @@ public class BigLinkedList {
         int lastOccurrence = wow.getCount() - 1 - wow.findSlotMaxLast();
         out.println("The last occurrence of the largest num is: " + lastOccurrence);
         // Sort all the numbers;
-        out.print("Sort all the numbers: ");
+        out.println("Sort all the numbers: ");
         wow.sort();
         wow.printList();
         // Get rid of all the 58's, return how many
