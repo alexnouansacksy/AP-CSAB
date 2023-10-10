@@ -18,7 +18,6 @@ public class MSOE2018_3 {
         double y = 0;
         double test = Math.toRadians(degrees);
 
-
         if (degrees > 270) degrees -= 270;
         else if (degrees > 180) degrees -= 180;
         else if (degrees > 90) degrees -= 90;
@@ -29,9 +28,7 @@ public class MSOE2018_3 {
         x = y;
         y = temp;
 
-
         out.printf("Minute hand is at (x, y): %.2f, %.2f", x, y);
-
     }
 }
 
