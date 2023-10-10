@@ -48,4 +48,7 @@ Enter minutes: 35
 Minute hand is at (x, y): -0.50, -0.87
 Process finished with exit code 0
 
+Enter minutes: 5
+Minute hand is at (x, y): 0.50, 0.87
+Process finished with exit code 0
  */
