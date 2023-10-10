@@ -18,20 +18,11 @@ public class MSOE2018_3 {
         double y = 0;
         double test = Math.toRadians(degrees);
 
-        if (degrees == 270) {
-            x = -1;
-            y = 0;
-        } else if (degrees == 180) {
-            x = 0;
-            y = -1;
-        } else if (degrees == 90) {
-            x = 1;
-            y = 0;
-        } else {
-            if (degrees > 270) degrees -= 270;
-            else if (degrees > 180) degrees -= 180;
-            else if (degrees > 90) degrees -= 90;
-        }
+
+        if (degrees > 270) degrees -= 270;
+        else if (degrees > 180) degrees -= 180;
+        else if (degrees > 90) degrees -= 90;
+
         x = Math.cos(test);
         y = Math.sin(test);
         double temp =  x;
