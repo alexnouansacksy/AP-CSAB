@@ -10,7 +10,7 @@ public class MSOE2018_3 {
         Scanner keyboard = new Scanner(System.in);
         int minutes = 0;
         out.print("Enter minutes: ");
-        minutes = keyboard.nextInt();
+        minutes = keyboard.nextInt();   
 
         double degrees =  360 * ( (double) minutes / 60);
 
