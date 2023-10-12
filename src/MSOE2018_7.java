@@ -4,6 +4,7 @@
 import java.util.*;
 import static java.lang.System.out;
 
+
 public class MSOE2018_7 {
     public static void main(String[] args) {
 
