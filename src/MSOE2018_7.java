@@ -45,6 +45,7 @@ public class MSOE2018_7 {
         days++;
         int hours = (int) unix / hourSeconds;
         unix -= hours * hourSeconds;
+        int minutes = (int) unix / minuteSeconds;
 
         String ampm = "AM";
         if (hours > 12) {
@@ -54,8 +55,9 @@ public class MSOE2018_7 {
         if (unix == 0) {
             hours = 12;
             days = 1;
+
         }
-        int minutes = (int) unix / minuteSeconds;
+
         if  (hours < 10 && minutes < 10) out.printf("0%d:%d %s", hours, minutes, ampm);
         else if (hours < 10) out.printf("0%d:%d %s", hours, minutes, ampm);
         else if (minutes < 10) out.printf("%d:0%d %s", hours, minutes, ampm);
