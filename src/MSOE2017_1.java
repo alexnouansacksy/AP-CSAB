@@ -22,7 +22,6 @@ public class MSOE2017_1 {
         if (cnt == cnt2) out.println(firstLetter + " " + secondLetter);
         else if (cnt > cnt2) out.println(firstLetter);
         else out.println(secondLetter);
-
     }
 }
 /*
