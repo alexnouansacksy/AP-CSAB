@@ -24,6 +24,7 @@ public class MSOE2017_1 {
         else out.println(secondLetter);
     }
 }
+
 /*
 Enter first letter: m
 Enter second letter: i
