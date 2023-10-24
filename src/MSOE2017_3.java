@@ -18,6 +18,7 @@ public class MSOE2017_3 {
                     out.println("(" + (i+1) + "," + (j+1) + ")");
     }
 }
+
 /*
 Word 1: dog
 Word 2: bot
