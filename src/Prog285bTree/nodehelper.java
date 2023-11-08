@@ -49,8 +49,6 @@ public class nodehelper {
         calc(temp.myright);
     }
 
-
-
     public int getcount() {return getcount(myroot);}
 
     public int getcount (node temp) {
