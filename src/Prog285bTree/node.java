@@ -34,6 +34,13 @@ public class node {
     public int getcode() {return mycode;}
     public double getsales() {return mysales;}
 
+    public void setdata(int id, int code, double sales, double commission) {
+        myid = id;
+        mycode = code;
+        mysales = sales;
+        mycom = commission;
+    }
+
     public String toString() {
         return myid + " " + mycode + " " + mysales + " " + mycom;
     }

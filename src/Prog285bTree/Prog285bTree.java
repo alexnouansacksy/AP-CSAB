@@ -19,14 +19,25 @@ public class Prog285bTree {
                 int code = keyboard.nextInt();
                 double sales = keyboard.nextDouble();
 
-                node fred = new node(id, code, sales);
-                wow.add(fred);
+                node claire = new node(id, code, sales);
+                wow.add(claire);
             }
 
             wow.calc();
             out.println(wow.getcount());
             wow.inprint();
 
+            out.println();
+            wow.delete(3250);
+            wow.inprint();
+
+            out.println();
+            wow.delete(6375);
+            wow.inprint();
+
+            out.println();
+            wow.delete(2250);
+            wow.inprint();
         } catch (IOException e) {
             out.println("Can't find data file!");
         }
