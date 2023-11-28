@@ -1,3 +1,7 @@
+// Alex Nouansacksy
+// MSOE 2023 Question 5
+// 11/26/2023
+
 package MSOE2023;
 import static java.lang.System.out;
 import java.util.*;
@@ -43,3 +47,21 @@ public class Problem5 {
         }
     }
 }
+/*ouput
+
+dazzle
+cinemas
+circle
+days
+impose
+cipher
+cinema
+
+DAZ213
+IMP053
+CIN334
+
+Process finished with exit code 0
+
+
+ */

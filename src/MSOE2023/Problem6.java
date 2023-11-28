@@ -1,3 +1,6 @@
+// Alex Nouansacksy
+// MSOE 2023 Question 6
+// 11/26/2023
 package MSOE2023;
 import static java.lang.System.out;
 import java.util.*;
@@ -47,3 +50,11 @@ public class Problem6 {
         out.println("It takes " + ticks + " ticks to clear the traffic.");
     }
 }
+/*output
+8
+c.cc..c
+It takes 9 ticks to clear the traffic.
+
+Process finished with exit code 0
+
+ */

@@ -1,3 +1,6 @@
+// Alex Nouansacksy
+// MSOE 2023 Question 1
+// 11/26/2023
 package MSOE2023;
 
 import static java.lang.System.out;
@@ -37,7 +40,14 @@ public class Problem1 {
 
         out.println(winner);
 
-
-
     }
 }
+
+/* output
+....bus
+.car
+bus wins
+
+Process finished with exit code 0
+
+ */
