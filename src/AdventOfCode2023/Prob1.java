@@ -38,7 +38,7 @@ public class Prob1 {
                     if (Character.isDigit(s.charAt(j))) {
                         secondNum = Character.getNumericValue(s.charAt(j));
                     }
-                }
+                    }
 
                 total += firstNum * 10 + secondNum;
             }
