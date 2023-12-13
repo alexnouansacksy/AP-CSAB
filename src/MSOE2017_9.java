@@ -15,6 +15,7 @@ public class MSOE2017_9 {
         int days = keyboard.nextInt();
         out.print("Probability of rerouting when suboptiminal: ");
 
+
         
 
     }
