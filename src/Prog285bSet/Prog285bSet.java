@@ -24,9 +24,12 @@ public class Prog285bSet {
                 wow.add(claire);
             }
 
-            for (node a : wow) {
-                a.setcom();
-                if (!(a.getcom() == 0)) out.println(a.toString());
+            Iterator<node> things = wow.iterator();
+
+            while (things.hasNext()) {
+                 node claire = things.next();
+                 claire.setcom();
+                 if (!(claire.getcom() == 0)) out.println(claire.toString());
             }
 
         } catch (IOException e) {
