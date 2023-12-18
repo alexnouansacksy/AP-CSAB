@@ -17,7 +17,6 @@ public class Prog215hMap {
                 wow.put(cnt, claire);
             }
 
-
             Set<Integer> keys = wow.keySet();
             Iterator<Integer> key = keys.iterator();
 
