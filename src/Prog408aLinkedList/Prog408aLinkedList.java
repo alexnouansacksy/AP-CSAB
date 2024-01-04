@@ -18,7 +18,6 @@ public class Prog408aLinkedList {
                 claire.add(new node(id, score));
             }
 
-
             out.println("Id\tScore");
             for (int i = claire.max(); i >= 0; i--) {
                 claire.print(i);

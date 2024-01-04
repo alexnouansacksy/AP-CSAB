@@ -48,7 +48,6 @@ public class comlist {
         while (temp.next != null) {
             if (temp.getScore() == n) {
                 out.printf("%d\t%d\n", temp.getID(), temp.getScore());
-                return true;
             }
             temp = temp.next;
         }
@@ -68,17 +67,23 @@ public class comlist {
 }
 
 /* output
-Id	Score
+ID	Score
 365	265
 306	262
 115	257
 311	256
 123	253
 325	246
+116	246
 323	245
+321	245
 113	243
+218	243
 208	242
+302	242
 104	239
+112	239
+110	238
 223	230
 213	229
 207	228

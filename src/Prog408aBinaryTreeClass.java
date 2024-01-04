@@ -10,7 +10,7 @@ import static java.lang.System.out;
 public class Prog408aBinaryTreeClass {
     public static void main(String[] args) {
         try {
-            Scanner keyboard = new Scanner(new File("data/prg408a.dat"));
+            Scanner keyboard = new Scanner(new File("data/prg408a.txt"));
 
             Set<claire> test = new TreeSet<>();
             Set<claire> wow = Collections.synchronizedSet(test);
