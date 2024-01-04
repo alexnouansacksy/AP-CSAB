@@ -1,8 +1,5 @@
 package Prog408aLinkedList;
 
-import Prog402aLinkedList.comlist;
-import Prog402aLinkedList.node;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -21,20 +18,12 @@ public class Prog408aLinkedList {
                 claire.add(new node(id, score));
             }
 
-            for (int i = 0; i < claire.getCount(); i++) {
-                int id = claire.get(i)[0];
-                int score = claire.get(i)[1];
-                if (score > maxscore) maxscore = score;
-            }
 
             out.println("Id\tScore");
-            for (int i = maxscore; i >= 0; i--) {
-                for (int j = 0; j < claire.size(); j++) {
-                    int id = claire.get(j)[0];
-                    int score = claire.get(j)[1];
-                    if (score == i) out.println(id + "\t" + score);
-                }
+            for (int i = claire.max(); i >= 0; i--) {
+                claire.print(i);
             }
+
         } catch (IOException e) {
             out.println("Can't find data file!");
         }

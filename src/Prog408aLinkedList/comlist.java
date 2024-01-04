@@ -1,5 +1,7 @@
+// Alex Nouansacksy
+// 408a LinkedList
+// 1/3/2024
 package Prog408aLinkedList;
-
 
 import static java.lang.System.out;
 
@@ -37,12 +39,51 @@ public class comlist {
         return cnt;
     }
 
-    public void print() {
-        if (myroot == null) return;
+    public boolean print(int n) {
         node temp = myroot;
-        while (temp != null) {
-            out.printf("%d\t%d", temp.getID(), temp.getScore());
+        if (temp == null) {
+            out.println("The list is empty.");
+            return false;
+        }
+        while (temp.next != null) {
+            if (temp.getScore() == n) {
+                out.printf("%d\t%d\n", temp.getID(), temp.getScore());
+                return true;
+            }
             temp = temp.next;
         }
+        return false;
+    }
+
+    public int max() {
+        if (myroot == null) return 0;
+        node temp = myroot;
+        int max = temp.getScore();
+        while (temp.next != null) {
+            if (temp.getScore()  > max) max = temp.getScore();
+            temp = temp.next;
+        }
+        return max;
     }
 }
+
+/* output
+Id	Score
+365	265
+306	262
+115	257
+311	256
+123	253
+325	246
+323	245
+113	243
+208	242
+104	239
+223	230
+213	229
+207	228
+203	224
+222	223
+
+Process finished with exit code 0
+ */
