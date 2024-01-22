@@ -2,11 +2,8 @@
 // Embry Riddle 1
 // 1/22/2024
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 import static java.lang.System.out;
 
