@@ -14,7 +14,7 @@ public class EmbryRiddle1 {
             int cnt = keyboard.nextInt();
             ArrayList<String> names = new ArrayList<>();
             for (int i = 0; i < cnt; i++) {names.add(keyboard.next());}
-            FileWriter myWriter = new FileWriter("C:\\Users\\Alex Nouansacksy\\IdeaProjects\\AP-CSAB\\src\\outputs\\filename.txt");
+            FileWriter myWriter = new FileWriter("C:\\Users\\Alex Nouansacksy\\IdeaProjects\\AP-CSAB\\src\\outputs\\greetings.txt");
             for (String a : names) {myWriter.write("Greetings, " + a + ", welcome to the contest!\n");}
             myWriter.close();
 
@@ -23,3 +23,8 @@ public class EmbryRiddle1 {
         }
     }
 }
+/* greetings.txt
+Greetings, David, welcome to the contest!
+Greetings, Raymond, welcome to the contest!
+Greetings, Janice, welcome to the contest!
+ */
