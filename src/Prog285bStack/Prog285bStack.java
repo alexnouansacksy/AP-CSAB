@@ -1,14 +1,12 @@
 // Alex Nouansacksy
 // Prog 285b with Stacks
+// 1/25/2024
 package Prog285bStack;
 
 import java.io.*;
 import java.util.*;
 
 import static java.lang.System.out;
-
-
-
 
 public class Prog285bStack {
 
@@ -36,16 +34,14 @@ public class Prog285bStack {
                 if (temp.getcom() != 0) out.println(temp);
             }
 
-
         } catch (IOException e) {
             out.println("Can't find data file!");
         }
     }
 
-
 }
 
-/*
+/* output
 Number	Code	Sales	Commission
 101		17		2250.0	213.75
 103		5		4000.0	300.0
