@@ -13,8 +13,6 @@ public class Prog285bStack {
     public static void main(String[] args) {
         try {
             Scanner keyboard = new Scanner(new File("data/prog285b.dat"));
-            Scanner input = new Scanner(System.in);
-
             Stack<node> stack = new Stack<node>();
 
             while (keyboard.hasNext()) {
