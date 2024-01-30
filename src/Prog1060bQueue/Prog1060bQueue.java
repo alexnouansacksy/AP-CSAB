@@ -4,6 +4,8 @@
 
 package Prog1060bQueue;
 
+import Prog285bQueue.node;
+
 import java.util.*;
 import static java.lang.System.out;
 
@@ -11,27 +13,28 @@ public class Prog1060bQueue {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         String option = "";
-        queueClass queue = new queueClass();
+        Queue<Integer> wow = new LinkedList<>();
         while (!option.equals("E")) {
             options();
             option = keyboard.next();
             if (option.equals("A")) {
                 out.print("enter number ");
-                queueClass.enqueue(keyboard.nextInt());
+                wow.add(keyboard.nextInt());
                 out.println("This is the list");
-                queueClass.displayQueue();
+                Iterator<Integer> iterator = wow.iterator();
+                while(iterator.hasNext()) out.println(iterator.next());
             } else if (option.equals("D")) {
                 out.print("enter number ");
-                queueClass.dequeue(keyboard.nextInt());
+                wow.add(keyboard.nextInt());
                 out.println("This is the list");
-                queueClass.displayQueue();
-            } else if (option.equals("E")) {
-                out.println("This is the list");
-                queueClass.displayQueue();
+                Iterator<Integer> iterator = wow.iterator();
+                while (iterator.hasNext()) out.println(iterator.next());
             }
+            else if (option.equals("E")) {
+                out.println("This is the list");
+                Iterator<Integer> iterator = wow.iterator();
+                while(iterator.hasNext()) out.println(iterator.next());            }
         }
-
-
     }
 
     public static void options() {

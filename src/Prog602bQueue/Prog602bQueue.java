@@ -15,9 +15,7 @@ public class Prog602bQueue {
             Scanner keyboard = new Scanner(new File("data/prog602b.txt"));
             Scanner input = new Scanner(System.in);
 
-            out.print("Queue Length: ");
-            int length = input.nextInt();
-            queueClass wow = new queueClass(length);
+            Queue<node> wow = new LinkedList<node>();
 
             while (keyboard.hasNext()) {
                 int accountNum = keyboard.nextInt();
@@ -26,10 +24,11 @@ public class Prog602bQueue {
 
                 node claire = new node(accountNum, hours,code);
                 claire.calc();
-                queueClass.enqueue(claire);
+                wow.add(claire);
             }
 
-            queueClass.displayQueue();
+            Iterator<node> iterator = wow.iterator();
+            while(iterator.hasNext()) out.println(iterator.next());
 
         } catch (IOException e) {
             out.println("Can't find data file!");
