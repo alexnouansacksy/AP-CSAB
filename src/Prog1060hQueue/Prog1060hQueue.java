@@ -85,19 +85,77 @@ public class Prog1060hQueue {
                 if (thing.equals("L")) {
                     String type = a.substring(1);
                     display(list, type);
-                } if (thing.equals("R")) {
+                }
+                if (thing.equals("R")) {
                     String type = a.substring(1);
                     if (type.equals("S")) if (!list.get(0).isEmpty()) rented.add(list.get(0).remove());
                     if (type.equals("C")) if (!list.get(1).isEmpty()) rented.add(list.get(1).remove());
                     if (type.equals("M")) if (!list.get(2).isEmpty()) rented.add(list.get(2).remove());
                     if (type.equals("W")) if (!list.get(3).isEmpty()) rented.add(list.get(3).remove());
                     if (type.equals("L")) if (!list.get(4).isEmpty()) rented.add(list.get(4).remove());
-                } if (thing.equals("C")) {
+                }
+                if (thing.equals("C")) {
                     out.println("\nRented");
                     Iterator<node> iterator = rented.iterator();
                     while (iterator.hasNext()) out.println(iterator.next());
-                    }
                 }
+                if (thing.equals("A")) {
+                    String type = a.substring(1, 2);
+                    int days = Integer.parseInt(a.substring(2, 3));
+                    String[] temp = a.split(" ");
+                    double newMiles = Double.parseDouble(temp[1]);
+                    String name = temp[2];
+
+                    double oldMiles =0;
+                    double traveled = 0;
+
+                    double perMile = 0;
+                    double perDay = 0;
+
+
+                    Iterator<node> iterator = rented.iterator();
+                    while (iterator.hasNext()) {
+                        node current = iterator.next();
+                        String currentName = current.getName().strip();
+                        if (currentName.equals(name)) {
+                            oldMiles = current.getMiles();
+                            perMile = current.mileCost();
+                            perDay = current.dayCost();
+                        }
+                    }
+
+                    traveled = newMiles - oldMiles;
+                    double milesCost = traveled * perMile;
+                    double daysCost = days * perDay;
+
+                    out.println("\nCar " + name);
+                    out.println("Beginning Mileage " + oldMiles);
+                    out.println("Ending Mileage " + newMiles);
+                    out.println("Miles driven " + traveled + " @ " + perMile + " = " + milesCost);
+                    out.println("days driven " + days + " @ " + perDay + " = " + daysCost);
+                    out.println("Cartype " + type);
+                    out.println("\nAmount Due: " + (milesCost + daysCost));
+
+                    Queue<node> newRented = new LinkedList<node>();
+
+                    iterator = rented.iterator();
+                    while (iterator.hasNext()) {
+                        node current = iterator.next();
+                        String currentName = current.getName().strip();
+                        if (!currentName.equals(name)) newRented.add(current);
+                    }
+
+                    rented = newRented;
+
+                    if (type.equals("S")) list.get(0).add(new node(name, newMiles, daysCost, milesCost));
+                    if (type.equals("C")) list.get(1).add(new node(name, newMiles, daysCost, milesCost));
+                    if (type.equals("M")) list.get(2).add(new node(name, newMiles, daysCost, milesCost));
+                    if (type.equals("W")) list.get(3).add(new node(name, newMiles, daysCost, milesCost));
+                    if (type.equals("L")) list.get(4).add(new node(name, newMiles, daysCost, milesCost));
+                }
+
+
+            }
         } catch (IOException e) {
             out.println("Can't find data file!");
         }
@@ -122,3 +180,125 @@ public class Prog1060hQueue {
         }
     }
 }
+
+
+/* output
+
+Listing for Sub Comapct
+Yugo      	3456.3
+Chevette  	1710.1
+RX7       	4002.1
+Sentra    	3007.0
+
+Listing for Compact
+Shadow    	831.2
+Topaz     	412.5
+Contour   	1091.7
+Fiero     	1541.4
+
+Listing for Midsize
+Cutlass   	930.7
+Mystique  	117.4
+LaBaron   	831.2
+Cougar    	1442.2
+
+Listing for Wagon
+Delta88   	2417.7
+Caprice   	4522.8
+Bonneville	5100.0
+
+Listing for Luxury
+Cadillac  	1234.5
+Lincoln   	8400.2
+Corvette  	10341.7
+
+Listing for Sub Comapct
+
+Listing for Compact
+
+Listing for Midsize
+Cougar    	1442.2
+
+Listing for Wagon
+Caprice   	4522.8
+Bonneville	5100.0
+
+Listing for Luxury
+Lincoln   	8400.2
+Corvette  	10341.7
+
+Rented
+Yugo      	3456.3
+Chevette  	1710.1
+RX7       	4002.1
+Sentra    	3007.0
+Shadow    	831.2
+Topaz     	412.5
+Contour   	1091.7
+Fiero     	1541.4
+Cutlass   	930.7
+Mystique  	117.4
+LaBaron   	831.2
+Delta88   	2417.7
+Cadillac  	1234.5
+
+Car Yugo
+Beginning Mileage 3456.3
+Ending Mileage 3640.0
+Miles driven 183.69999999999982 @ 0.22 = 40.41399999999996
+days driven 2 @ 18.0 = 36.0
+Cartype S
+
+Amount Due: 76.41399999999996
+
+Car Cadillac
+Beginning Mileage 1234.5
+Ending Mileage 2801.2
+Miles driven 1566.6999999999998 @ 0.37 = 579.679
+days driven 2 @ 34.0 = 68.0
+Cartype L
+
+Amount Due: 647.679
+
+Car Contour
+Beginning Mileage 1091.7
+Ending Mileage 2031.7
+Miles driven 940.0 @ 0.25 = 235.0
+days driven 3 @ 20.5 = 61.5
+Cartype C
+
+Amount Due: 296.5
+
+Listing for Sub Comapct
+Yugo	3640.0
+
+Listing for Compact
+Contour	2031.7
+
+Listing for Midsize
+Cougar    	1442.2
+
+Listing for Wagon
+Caprice   	4522.8
+Bonneville	5100.0
+
+Listing for Luxury
+Lincoln   	8400.2
+Corvette  	10341.7
+Cadillac	2801.2
+
+Rented
+Chevette  	1710.1
+RX7       	4002.1
+Sentra    	3007.0
+Shadow    	831.2
+Topaz     	412.5
+Fiero     	1541.4
+Cutlass   	930.7
+Mystique  	117.4
+LaBaron   	831.2
+Delta88   	2417.7
+
+Process finished with exit code 0
+
+ */

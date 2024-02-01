@@ -13,5 +13,10 @@ public class node {
         perMile = costMile;
     }
 
+    public double getMiles() {return mileage;}
+    public String getName() {return name;}
+    public double dayCost() {return perDay;}
+    public double mileCost() {return perMile;}
+
     public String toString() {return name + "\t" + mileage;}
 }
