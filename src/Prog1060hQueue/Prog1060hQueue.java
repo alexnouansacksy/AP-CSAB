@@ -1,3 +1,7 @@
+// Alex Nouansacksy
+// Prog 1060h Queue
+// 2/1/2024
+
 package Prog1060hQueue;
 
 import java.io.*;
