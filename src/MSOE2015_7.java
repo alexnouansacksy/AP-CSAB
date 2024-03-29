@@ -5,7 +5,7 @@
 import java.util.*;
 import static java.lang.System.out;
 
-class MSOE2017_7 {
+class MSOE2015_7 {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
