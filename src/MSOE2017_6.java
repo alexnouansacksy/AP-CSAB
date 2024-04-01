@@ -7,10 +7,9 @@ import java.util.*;
 public class MSOE2017_6 {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        ArrayList<Integer> factors = new ArrayList<>();
         out.print("Enter num: ");
         int num = keyboard.nextInt();
-        factors = primeFactors(num);
+        ArrayList<Integer> factors = primeFactors(num);
         int result = num;
         for (int i = 0; i < factors.size(); i++) {
             result *= (1 + (1 / (double)factors.get(i)));
