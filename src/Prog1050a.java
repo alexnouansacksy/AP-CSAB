@@ -36,7 +36,7 @@ public class Prog1050a {
             double total = 0;
             for (int i = 1; i < list.size(); i++) {
                 String[] strings = list.get(i);
-                total+= Double.parseDouble(strings[13]);
+                if (strings[2].equals("meat")) total+= Double.parseDouble(strings[13]);
             }
             out.println("\nWhat was the profit on all of the meat?\n" + total);
 
