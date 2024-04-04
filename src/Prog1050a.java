@@ -36,7 +36,7 @@ public class Prog1050a {
             double total = 0;
             for (int i = 1; i < list.size(); i++) {
                 String[] strings = list.get(i);
-                if (strings[2].equals("meat")) total+= Double.parseDouble(strings[13]);
+                if (strings[2].equals("Meat")) total+= Double.parseDouble(strings[13]);
             }
             out.println("\nWhat was the profit on all of the meat?\n" + total);
 
@@ -213,7 +213,7 @@ How many items of Cereal were bought by Cambodia?
 54256842
 
 What was the profit on all of the meat?
-1.962399822942203E11
+1.1933838487999947E10
 
 What percentage of the sales were High Priority?
 124987/54756843 or 0.02%
