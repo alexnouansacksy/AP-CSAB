@@ -92,7 +92,6 @@ public class Prog1050a {
             out.println(highestcountry + " with $" + highestprofit + " in one order.");
 
             // Which region bought the most Snacks?
-
             out.println("\nWhich region bought the most Snacks?");
             ArrayList<String> countries = new ArrayList<>();
 
