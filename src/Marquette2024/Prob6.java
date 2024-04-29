@@ -1,7 +1,11 @@
+// Alex Nouansacksy
+// Marquette 2024 #6
+// 4/29/2024
+
 package Marquette2024;
 import java.util.*;
 
-public class CountandSay {
+public class Prob6 {
     // Method to generate the nth term in the "Count and Say" sequence
     public static String countAndSay(int n) {
         n--;
@@ -39,10 +43,21 @@ public class CountandSay {
     // Main method to run the program
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Input an Integer: ");
+        System.out.print("Input an Integer: ");
         // Read an integer from the user
         int input = scanner.nextInt();
         // Print the nth term in the "Count and Say" sequence
         System.out.println(countAndSay(input));
     }
 }
+/* output
+Input an Integer: 1
+1
+
+Process finished with exit code 0
+
+Input an Integer: 4
+1211
+Process finished with exit code 0
+
+ */

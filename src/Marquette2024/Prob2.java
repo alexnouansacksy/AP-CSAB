@@ -1,3 +1,7 @@
+// Alex Nouansacksy
+// Marquette 2024 #2
+// 4/29/2024
+
 package Marquette2024;
 import java.util.*;
 import static java.lang.System.out;
@@ -20,3 +24,19 @@ public class Prob2 {
         else out.println("False");
     }
 }
+/* output
+race car
+True
+
+Process finished with exit code 0
+
+Race car
+True
+
+Process finished with exit code 0
+
+banana
+False
+
+Process finished with exit code 0
+ */
