@@ -12,26 +12,25 @@ public class Prog408aBinaryTreeClass {
         try {
             Scanner keyboard = new Scanner(new File("data/prg408a.txt"));
 
-            Set<claire> test = new TreeSet<>();
-            Set<claire> wow = Collections.synchronizedSet(test);
-
-
+            Set<bob> test = new TreeSet<>();
+            Set<bob> wow = Collections.synchronizedSet(test);
+            
             while (keyboard.hasNext()) {
-                wow.add(new claire(keyboard.nextInt(), keyboard.nextInt()));
+                wow.add(new bob(keyboard.nextInt(), keyboard.nextInt()));
             }
 
-            Iterator<claire> things = wow.iterator();
+            Iterator<bob> things = wow.iterator();
 
             int max = 0;
             while (things.hasNext()) {
-                claire thing = things.next();
+                bob thing = things.next();
                 if (thing.getScore() > max) max = thing.getScore();
             }
 
             for (int i = max; i >= 0; i--) {
                 things = wow.iterator();
                 while (things.hasNext()) {
-                    claire thing = things.next();
+                    bob thing = things.next();
                     if (thing.getScore() == i) {
                         int id = thing.getID();
                         int score = thing.getScore();
@@ -46,21 +45,20 @@ public class Prog408aBinaryTreeClass {
     }
 }
 
-class claire implements Comparable<claire> {
+class bob implements Comparable<bob> {
     int id;
     int score;
 
-    public claire(int id, int score) {
+    public bob(int id, int score) {
         this.id = id;
         this.score = score;
     }
-
 
     public int getID() {return id;}
     public int getScore() {return score;}
     // compareTo method to sort in
     // ascending order
-    public int compareTo(claire obj) {return obj.score - this.score;}
+    public int compareTo(bob obj) {return obj.score - this.score;}
 
     // override toString() method
     // for display purpose
